@@ -23,12 +23,10 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: |
-        ./gradlew build
-        find . -name *.apk
+      run: ./gradlew build
       
     - name: 'Upload Built APK'
       uses: actions/upload-artifact@v4
       with:
         name: Fixed APK
-        path: /home/runner/work/SUITSS-no-test-only/SUITSS-no-test-only/build/outputs/apk/*.apk
+        path: ./app/build/outputs/apk/release/SystemUITunerAddOn_1.4-release-unsigned.apk
